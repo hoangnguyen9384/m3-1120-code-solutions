@@ -1,26 +1,26 @@
 import React from 'react';
-import Switch from 'react-switch';
 
 export default class ToggleSwitch extends React.Component {
-  constructor() {
-    super();
-    this.state = { checked: true };
+  constructor(props) {
+    super(props);
+    this.state = { isClicked: true };
     this.clickToChange = this.clickToChange.bind(this);
   }
 
-  clickToChange(checked) {
-    this.setState({ checked });
+  clickToChange() {
+    this.setState(state => ({ isClicked: false }));
   }
 
   render() {
     return (
       <div>
         <h2>Toggle Switch</h2>
-        <Switch className="react-switch"
-          onChange={this.clickToChange}
-          checked={this.state.checked}
-        />
-        <p className='on-off'>{this.state.checked ? 'ON' : 'OFF'}</p>
+        <label className ={'switch'}>
+          <input type={'checkbox'} checked={this.state.isClicked}
+            onChange={this.clickToChange}/>
+          <span className={'slider rounded'}/>
+        </label>
+        <p>{this.state.isClicked ? 'ON' : 'OFF'}</p>
       </div>
     );
   }

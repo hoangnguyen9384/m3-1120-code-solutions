@@ -1,0 +1,24 @@
+.circle {
+  width: 300px;
+  height: 300px;
+  border: 2px solid black;
+  position: relative;
+  margin-left: 8rem;
+  margin-top: 4rem;
+  text-align: center;
+  border-radius: 50%;
+  background-color: lightgray;
+}
+
+.seconds {
+  margin-top: 120px;
+  font-size: 50px;
+}
+
+.play-pause-button {
+  position: relative;
+  text-align: center;
+  justify-content: center;
+  margin-right: 25%;
+  margin-top: 4%;
+}

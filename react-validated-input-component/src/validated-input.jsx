@@ -48,7 +48,7 @@ export default class Validatedinput extends React.Component {
           <h2>Password</h2>
           <label>
             <input type="password" value={this.state.value} onChange={this.handleChange}></input>
-            <i className="check-mark">&#10006;</i>
+            <i className="check-mark">&#10004;</i>
           </label>
         </form>
       );

@@ -1,0 +1,44 @@
+.slider {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  width: 1000px;
+  height: 500px;
+  border-radius: 15px;
+}
+
+.r-arrow {
+  position: absolute;
+  font-size: 4rem;
+  right: 35px;
+  top: 50%;
+  cursor: pointer;
+  z-index: 10;
+  color: black;
+}
+
+.l-arrow {
+  position: absolute;
+  font-size: 4rem;
+  left: 50px;
+  top: 50%;
+  cursor: pointer;
+  z-index: 10;
+  color: black;
+}
+
+.slide {
+  opacity: 0;
+  transition-duration: 3s;
+}
+
+.slide.active {
+  opacity: 1;
+  transition-duration: 3s;
+  transform: scale(1.08);
+}

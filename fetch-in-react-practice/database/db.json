@@ -3,23 +3,53 @@
     {
       "id": 1,
       "task": "Learn to code.",
-      "isCompleted": false
+      "isCompleted": true
     },
     {
       "id": 3,
       "task": "Build projects.",
-      "isCompleted": false
+      "isCompleted": true
     },
     {
       "id": 7,
       "task": "Get a job.",
-      "isCompleted": false
+      "isCompleted": true
     },
     {
-      "id": 8
+      "id": 8,
+      "isCompleted": true
     },
     {
-      "id": 9
+      "id": 9,
+      "isCompleted": true
+    },
+    {
+      "id": 10,
+      "isCompleted": true
+    },
+    {
+      "id": 11,
+      "isCompleted": true
+    },
+    {
+      "task": "practice React",
+      "isCompleted": true,
+      "id": 12
+    },
+    {
+      "task": "Practice problems shooting",
+      "isCompleted": true,
+      "id": 13
+    },
+    {
+      "task": "ride the bike",
+      "isCompleted": false,
+      "id": 14
+    },
+    {
+      "task": "feed the dogs",
+      "isCompleted": false,
+      "id": 15
     }
   ]
 }

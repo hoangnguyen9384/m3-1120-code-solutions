@@ -25,14 +25,8 @@ class App extends React.Component {
      */
     fetch('/api/todos')
       .then(res => res.json())
-      .then(todos => this.setState({
-        todos: [
-          {
-            id: Number,
-            task: '',
-            isCompleted: false
-          }
-        ]
+      .then(data => this.setState({
+        todos: data
       }))
       .catch(err => console.error(err));
   }
@@ -48,24 +42,19 @@ class App extends React.Component {
      */
     fetch('/api/todos', {
       method: 'POST',
-      header: {
+      headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({
-        task: '',
-        isCompleted: false
-      })
+      body: JSON.stringify(newTodo)
     })
       .then(res => res.json())
-      .then(data => this.setState({
-        todos: [
-          {
-            task: data.task,
-            isCompleted: false
-          }
-        ]
-      }))
-      .catch(err => console.error(err));
+      .then(data => {
+        const newToDos = [...this.state.todos];
+        newToDos.push(data);
+        this.setState({
+          todos: newToDos
+        })
+      })
 
   }
 
@@ -81,6 +70,24 @@ class App extends React.Component {
      * TIP: Be sure to SERIALIZE the updates in the body with JSON.stringify()
      * And specify the "Content-Type" header as "application/json"
      */
+    const matching = (todo) => todo.id === todoId;
+    const todo = this.state.todos.findIndex(matching);
+    fetch(`/api/todos/${todoId}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        isCompleted: !todo.isCompleted
+      })
+    })
+      .then(res => res.json())
+      .then(data => {
+        const newToDos = this.state.todos.map(todo => todo.id === data.id ? data : todo );
+        this.setState({
+          todos: newToDos
+        });
+      })
   }
 
   render() {

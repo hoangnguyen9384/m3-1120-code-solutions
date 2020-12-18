@@ -1,5 +1,21 @@
 import React from 'react';
 
+const topics =
+[
+  {
+    title: 'Hypertext Markup Language',
+    content: 'Hypertext Markup Language (HTML) is the standard markup language for documents designed to be displayed in a web browser. It can be assisted by technologies such as Cascading Style Sheets (CSS) and scripting languages such as JavaScript.'
+  },
+  {
+    title: 'Cascading Style Sheets',
+    content: 'Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in a markup language like HTML. CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript.'
+  },
+  {
+    title: 'JavaScript',
+    content: 'JavaScript (/ˈdʒɑːvəˌskrɪpt/), often abbreviated as JS, is a high-level, interpreted scripting language that conforms to the ECMAScript specification. JavaScript has curly-bracket syntax, dynamic typing, prototype-based object-orientation, and first-class functions.'
+  }
+];
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -28,23 +44,13 @@ class App extends React.Component {
 }
 
 export default class Accordion extends React.Component {
+
   render() {
     return (
       <div>
-        <App title="Hypertext Markup Language">
+        <App topics={topics} title={topics.title}>
           <div className="content">
-            <p>Hypertext Markup Language (HTML) is the standard Markup
-            language for creating web pages and web applications. With Cascading Style Sheets (CSS) and Javascript, it forms a triad of cornerstone technologies for the World Wide Web.</p>
-          </div>
-        </App>
-        <App title="Cascading Style Sheets">
-          <div className="content">
-            <p>Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in a markup language like HTML. CSS is a cornerstone technology of the World Wide Web alongside HTML and Javascript.</p>
-          </div>
-        </App>
-        <App title="Javascript">
-          <div className="content">
-            <p>avascript, often abbreviated as JS, is a high-level, interpreted programming language that conforms to the ECMAScript specification. JavaScript has curly-bracket syntax, dynamic typing, prototype-based object-orientation, and first-class functions.</p>
+            <p>{topics.content}</p>
           </div>
         </App>
       </div>

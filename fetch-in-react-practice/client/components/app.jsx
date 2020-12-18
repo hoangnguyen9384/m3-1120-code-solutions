@@ -53,8 +53,8 @@ class App extends React.Component {
         newToDos.push(data);
         this.setState({
           todos: newToDos
-        })
-      })
+        });
+      });
 
   }
 
@@ -70,8 +70,8 @@ class App extends React.Component {
      * TIP: Be sure to SERIALIZE the updates in the body with JSON.stringify()
      * And specify the "Content-Type" header as "application/json"
      */
-    const matching = (todo) => todo.id === todoId;
-    const todo = this.state.todos.findIndex(matching);
+    const matching = todo => todo.id === todoId;
+    const todo = this.state.todos.find(matching);
     fetch(`/api/todos/${todoId}`, {
       method: 'PATCH',
       headers: {
@@ -83,11 +83,11 @@ class App extends React.Component {
     })
       .then(res => res.json())
       .then(data => {
-        const newToDos = this.state.todos.map(todo => todo.id === data.id ? data : todo );
+        const newToDos = this.state.todos.map(todo => todo.id === data.id ? data : todo);
         this.setState({
           todos: newToDos
         });
-      })
+      });
   }
 
   render() {

@@ -87,7 +87,7 @@ app.put('/api/grades/:gradeId', (req, res, next) => {
           error: 'Invalid gradeId or missing name, course, or score.'
         });
       } else {
-        res.status(200).json({ grade });
+        res.status(200).json(grade);
       }
     })
     .catch(err => {
@@ -114,7 +114,7 @@ app.delete('/api/grades/:gradeId', (req, res, next) => {
     .then(result => {
       const grade = result.rows[0];
       if (grade) {
-        res.status(204);
+        res.sendStatus(204);
       } else {
         res.status(404).json({
           error: `Cannot find grade with ${gradeId}`
